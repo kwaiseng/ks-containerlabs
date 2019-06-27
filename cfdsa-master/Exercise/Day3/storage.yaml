@@ -1,0 +1,15 @@
+apiVersion: v1
+kind : PersistentVolumeClaim
+
+metadata:
+  name : bggpvc
+  annotations : 
+    volume.beta.kubernetes.io/storage-provisioner: "kubernetes.io/vsphere-volume "
+
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage : "2Gi"
+  storageClassName: standard
